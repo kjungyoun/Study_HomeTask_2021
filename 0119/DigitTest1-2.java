@@ -3,7 +3,7 @@ package com.ssafy.algo;
 import java.util.Scanner;
 /**
  * @author youn
- * @Comment 처음에 짠 코드입니다. DigitTest1-2.java 파일은 해당 코드를 좀 더 정답에 가깝게 수정한 코드입니다.
+ * @Comment 두번째로 짠 코드입니다. 처음에 짠 알고리즘을 수정 보완하여 더 완벽하게 구현했습니다.
  */
 public class DigitTest1 {
 	// 십의 자리수를 판단하여 갯수를 증가시켜주는 메서드
@@ -22,16 +22,11 @@ public class DigitTest1 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int[] num = new int[100];
 		int[] count = new int[10];
-		System.out.println("100개 이하로 정수를 입력하시오");
-		for (int i = 0; i < num.length; i++) {
-			num[i] = scan.nextInt();
-			if(num[i]==0) break;
-		}
-		for (int i = 0; i < num.length; i++) {
-			if(num[i]!=0) decimalCount(num[i],count);
-			else break;
+		while(true) {
+			int num = scan.nextInt();
+			if(num==0) break;
+			decimalCount(num,count);
 		}
 		for (int i = 0; i < count.length; i++) {
 			if(count[i] != 0) System.out.println(i+" : "+count[i]+"개");
