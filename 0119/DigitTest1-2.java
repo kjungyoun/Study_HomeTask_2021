@@ -32,6 +32,7 @@ public class DigitTest1 {
 			if(count[i] != 0) System.out.println(i+" : "+count[i]+"개");
 		}
 		
+		
 	}
 
 }
