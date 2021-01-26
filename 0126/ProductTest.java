@@ -34,7 +34,7 @@ public class ProductTest {
 		mgr.remove(2000);
 		mgr.remove(8000);
 		System.out.println("=============재고,가격정보=============");
-		mgr.searchAllPrice();
+		System.out.println("전체 상품의 가격의 합: "+mgr.searchAllPrice() + "원");
 	}
 
 }

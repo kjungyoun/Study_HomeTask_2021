@@ -143,14 +143,14 @@ public class ProductMgr {
 	/**
 	 * 	전체 재고, 상품 금액을 구하는 기능
 	 */
-	public void searchAllPrice() {
-		System.out.println("--------TV정보--------");
+	public int searchAllPrice() {
+		int sum=0;
 		for(int i=0; i<tsize;i++) {
-			System.out.println(tvs[i].getName()+ " = " + "재고: " + tvs[i].getStuck() + "가격: "+tvs[i].getPrice());
+			sum += tvs[i].getStuck() * tvs[i].getPrice();
 		}
-		System.out.println("-----------냉장정보-----------");
 		for(int i=0; i<rsize; i++) {
-			System.out.println(refs[i].getName()+ " = " + "재고: " + refs[i].getStuck() + "가격: "+refs[i].getPrice());
+			sum += refs[i].getStuck() * refs[i].getPrice();
 		}
+		return sum;
 	}
 }
