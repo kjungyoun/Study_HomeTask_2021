@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Become a Member</title>
+<style type="text/css">
+	fieldset.outter{
+	width : 40%;
+	}
+	fieldset {
+	width: 500px;
+	padding:20px;
+	margin: 20px auto;
+	}
+	legend{
+	color : green;
+	}
+	table {
+	margin: auto;
+	width: 80%;
+	}
+	h1 {
+	font-family: "Arial Black", sans-serif;
+	color:orange;
+	text-shadow: 3px 2px 2px black;
+	}
+	hr{
+	size  : 2px;
+	width : 700px;
+	}
+	input.a{
+	border-color: red;
+	}
+	
+</style>
+</head>
+<body>
+<fieldset class="outter">
+	<header>
+		<h1 align="center">
+			Become a Member
+		</h1>
+		<hr color="orange">
+	</header>
+	<form action="index.html">
+		<fieldset>
+			<legend>Registration Information</legend>
+			<table>
+				<tbody>
+					<tr>
+						<td align="right">
+							<label for="userid">E-mail : </label>					
+						</td>
+						<td align="left">
+							<input type="email" id="email" name="email" class="a">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">					
+						<label for="password">Password : </label>
+						</td>
+						<td align="left">
+							<input type="text" id="psw" name="psw" value="At least 6 letters or numbers"class="a">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label for="vpassword">Verify Password : </label>
+						</td>
+						<td align="left">
+							<input type="text" id="vpwd" name="vpwd" value="At least 6 letters or numbers" class="a">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Member Information</legend>
+			<table >
+				<tbody>
+					<tr>
+						<td align="right">
+							<label for="fname">First Name : </label>					
+						</td>
+						<td align="left">
+							<input type="text" id="fname" name="fname" class="a">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">					
+						<label for="lname">Last Name : </label>
+						</td>
+						<td align="left">
+							<input type="text" id="lname" name="lname" class="a">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label for="address">Address : </label>
+						</td>
+						<td align="left">
+							<input type="text" id="addr" name="addr">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label for="city">City : </label>
+						</td>
+						<td align="left">
+							<input type="text" id="city" name="city" class="a">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label for="state">State : </label>
+						</td>
+						<td align="left">
+							<input type="text" id="state" name="state" value="2-character code" class="a">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label for="zip">ZIP Code : </label>
+						</td>
+						<td align="left">
+							<input type="text" id="addr" name="addr" value="5 or 9 digits" class="a">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label for="phone">Phone Number : </label>
+						</td>
+						<td align="left">
+							<input type="tel" id="phone" name="phone" value="999-999-9999">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Mebership Information</legend>
+			<table>
+				<tr>
+					<td align="right">
+						<label for="type">Mebership Type : </label>
+					</td>
+					<td align="left">
+						<select name="type" >
+							<optgroup label="membership" >
+								<option>Junior</option>
+								<option>Senior</option>
+								<option>Semi Pro</option>
+								<option>Pro</option>
+								<option>VIP</option>
+							</optgroup>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<label for="date">Starting Date : </label>
+					</td>
+					<td align="left">
+						<input type="date" name="date" class="a">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<label for="guest">Ticket for Guests : </label>
+					</td>
+					<td align="left">
+						<input type="number" min="0" max="30" name="guest">				
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Submit Your Membership</legend>
+			<table>
+				<tr>
+					<td></td>
+					<td>
+						<button type="submit">Submit</button>
+						<button type="reset">Reset Fields</button>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	<hr color="orange">
+</fieldset>
+</body>
+</html>
