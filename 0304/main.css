@@ -1,0 +1,39 @@
+@charset "UTF-8";
+*{
+	list-style: none;
+}
+section{
+	width: 50%;
+	margin: 0 auto;
+}
+.lotto{
+	border: 1px solid black;
+	height: 200px;
+}
+h3{
+	margin: 7px 10px 0;
+}
+#inner{
+	border: 1px solid skyblue;
+	background: skyblue;
+	margin: 10px 10px 0;
+	height: 140px;
+	text-align: center;
+}
+ul{
+	text-align: center;
+	margin-top: 50px;
+}
+ul li{
+	border: 1px solid yellow;
+	background: yellow;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	display: inline-block;
+	align-content: center;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 15px;
+	font-weight: bold;
+}
