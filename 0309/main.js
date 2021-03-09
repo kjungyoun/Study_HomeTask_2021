@@ -55,6 +55,7 @@ $(function () {
     			alert(err);
     		}
     	})
+    	alert('회원가입에 성공하였습니다!')
     })
     
     // modal 창 로그인 구현
