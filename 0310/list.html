@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SSAFY 게시판</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                // logo 선택시 메인페이지로 이동
+                $("#logo").click(function () {
+                    location.href = "index.html";
+                });
+
+                // 글쓰기 버튼 구현
+                $("#write").click(function () {
+                    location.href = "index.html";
+                });
+
+                // 글 선택시 선택한 글의 번호 출력
+                $("body tr").each(function (idx, item) {
+                    $(item).click(function () {
+                        var no = $(item).find("td:first").text();
+                        alert(no);
+                        location.href = "content.html";
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <div class="userid mt-2">
+                        <span class="userid-id" style="font-weight: bold">싸피</span>
+                        <span>님 환영합니다.</span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">로그아웃</a>
+                </li>
+            </ul>
+            <div class="text-center" id="logo">
+                <span class="font-weight-bold" style="font-size: 40px">SSAFY</span>
+                <span style="font-size: 40px">게시판</span>
+            </div>
+            <nav class="navbar navbar-expand-sm mt-3">
+                <button type="button" class="btn btn-primary" style="margin-right: 550px" id="write">글쓰기</button>
+                <select name="cars" class="custom-select mr-1" style="width: 100px">
+                    <option selected value="no">글번호</option>
+                    <option value="title">제목</option>
+                    <option value="id">아이디</option>
+                </select>
+                <input type="text" class="form-control mr-1" placeholder="검색어 입력." id="keyword" style="width: 250px" />
+                <button type="button" class="btn btn-secondary">검색</button>
+            </nav>
+            <div class="content-list mt-5">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>글번호</th>
+                            <th style="width: 60%; text-align: center">제목</th>
+                            <th>작성자</th>
+                            <th>조회수</th>
+                            <th>작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>글제목</td>
+                            <td>작성자</td>
+                            <td>조회수</td>
+                            <td>작성일</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>글제목</td>
+                            <td>작성자</td>
+                            <td>조회수</td>
+                            <td>작성일</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>글제목</td>
+                            <td>작성자</td>
+                            <td>조회수</td>
+                            <td>작성일</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">최신</a></li>
+                    <li class="page-item"><a class="page-link" href="#">이전</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">다음</a></li>
+                    <li class="page-item"><a class="page-link" href="#">마지막</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

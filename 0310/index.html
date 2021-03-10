@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SSAFY 게시판</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                // logo 선택시 메인페이지로 이동
+                $("#logo").click(function () {
+                    location.href = "index.html";
+                });
+
+                // 글작성 버튼 구현
+                $("#write").click(function () {
+                    if (!$("#title").val()) {
+                        alert("글 제목을 입력해주세요");
+                        $("#title").focus();
+                        return;
+                    }
+                    if (!$("#content").val()) {
+                        alert("글 내용을 입력해주세요");
+                        $("#content").focus();
+                        return;
+                    }
+                    alert("게시글이 등록되었습니다.");
+                    location.href = "list.html";
+                });
+
+                // 초기화 버튼 구현
+                $("#reset").click(function () {
+                    $("#title").val("");
+                    $("#content").val("");
+                });
+
+                // 목록 버튼 구현
+                $("#list").click(function () {
+                    location.href = "list.html";
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <div class="userid mt-2">
+                        <span class="userid-id" style="font-weight: bold">싸피</span>
+                        <span>님 환영합니다.</span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">로그아웃</a>
+                </li>
+            </ul>
+            <div class="text-center" id="logo">
+                <span class="font-weight-bold" style="font-size: 40px">SSAFY</span>
+                <span style="font-size: 40px">게시판</span>
+            </div>
+            <div class="form-list">
+                <div class="form-group">
+                    <label for="title">제목:</label>
+                    <input type="text" class="form-control" id="title" />
+                </div>
+                <div class="form-group">
+                    <label for="content">내용:</label>
+                    <textarea class="form-control" rows="29" id="content"></textarea>
+                </div>
+                <div class="btn-groups text-center">
+                    <button type="button" class="btn btn-primary" id="write">글작성</button>
+                    <button type="button" class="btn btn-warning" id="reset">초기화</button>
+                    <button type="button" class="btn btn-secondary" id="list">목록</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
