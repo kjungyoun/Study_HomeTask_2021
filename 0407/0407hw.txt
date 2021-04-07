@@ -1,0 +1,18 @@
+04.09 DB 관통 프로젝트 추가 기능 명세서
+
+1. notice Table 생성하여 공지사항 관리 (글 추가, 수정, 삭제) 기능 구현
+	notice table(
+		int noticeno (primary key), 
+		varchar(50) title, 
+		varchar(200) content, 
+		date uploadDate
+		)
+
+2. comment Table 생성하여 공지사항에 댓글 등록 구현 (댓글 추가, 수정, 삭제) 기능 구현
+	comment table (
+		varchar(30) userid,
+		varchar(200) content,
+		date uploadDate
+		)
+
+3. commercialarea & commercialcode를 이용하여 주변 상권 정보 페이지 구현
