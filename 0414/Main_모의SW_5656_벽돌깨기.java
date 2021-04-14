@@ -36,12 +36,12 @@ public class Main_모의SW_5656_벽돌깨기 {
 			}
 			
 			list = new int[N];
-			combination(0,list);
+			permutation(0,list);
 			System.out.println("#"+tc+" "+answer);
 		}
 	}
 	
-	private static void combination(int cnt, int[] list) {
+	private static void permutation(int cnt, int[] list) {
 		
 		if(cnt == N) {
 			answer = Math.min(answer, breakBrick(list));
@@ -50,7 +50,7 @@ public class Main_모의SW_5656_벽돌깨기 {
 		
 		for (int i = 0; i < W; i++) {
 			list[cnt] = i;
-			combination(cnt+1,list);
+			permutation(cnt+1,list);
 		}
 		
 	}
