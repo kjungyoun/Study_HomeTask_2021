@@ -57,7 +57,6 @@ public class Main_모의SW_5656_벽돌깨기 {
 
 	private static int breakBrick(int[] list) {
 		Queue<int[]> queue = new LinkedList<int[]>();
-		boolean visited[][] = new boolean[H][W];
 
 		int temp[][] = new int[H][W];
 		for (int i = 0; i < H; i++) { // 배열 복사
@@ -67,10 +66,12 @@ public class Main_모의SW_5656_벽돌깨기 {
 		}
 		
 		for (int num = 0; num < N; num++) { // 구슬의 개수만큼 for문
+			boolean visited[][] = new boolean[H][W];
 			int c = list[num];
 			for (int i = 0; i < H; i++) {
 				if(temp[i][c] != 0) {
 					queue.add(new int[] {i,c});
+					visited[i][c] = true;
 					break;
 				}
 			}
@@ -82,7 +83,6 @@ public class Main_모의SW_5656_벽돌깨기 {
 				int range = temp[row][col]-1;
 				int nr,nc;
 				temp[row][col] = 0; // 벽돌 제거
-				visited[row][col] = false;
 				if(range ==0) continue;
 				for (int i = 0; i < 4; i++) {
 					for (int j = 1; j <= range; j++) {
