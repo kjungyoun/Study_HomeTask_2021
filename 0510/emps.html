@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <h2 class="text-center">사원 목록</h2>
+      <table class="table text-center">
+        <thead class="table-primary">
+          <tr>
+            <th>사원 아이디</th>
+            <th>사원명</th>
+            <th>부서</th>
+            <th>직책</th>
+            <th>연봉</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="member in members">
+            <td v-text="member.id"></td>
+            <td><a :href="'detailemp.html?id='+member.id">{{member.name}}</a></td>
+            <td>{{member.department}}</td>
+            <td>{{member.position}}</td>
+            <td v-text="member.price"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      const members = [
+        {
+          id: 1,
+          name: "박구곤",
+          department: "인사부",
+          position: "사장",
+          price: 60000,
+        },
+        {
+          id: 18,
+          name: "서정주",
+          department: "기획부",
+          position: "사원",
+          price: 13000,
+        },
+        {
+          id: 19,
+          name: "안창환",
+          department: "기획부",
+          position: "사원",
+          price: 678,
+        },
+        {
+          id: 20,
+          name: "윤정숙",
+          department: "기획부",
+          position: "사원",
+          price: 750,
+        },
+        {
+          id: 21,
+          name: "장현철",
+          department: "기획부",
+          position: "사원",
+          price: 8500,
+        },
+        {
+          id: 23,
+          name: "강연범",
+          department: "영업부",
+          position: "사원",
+          price: 795,
+        },
+        {
+          id: 24,
+          name: "오은경",
+          department: "기획부",
+          position: "사원",
+          price: 860,
+        },
+        {
+          id: 27,
+          name: "장길산",
+          department: "영업부",
+          position: "과장",
+          price: 12345,
+        },
+        {
+          id: 28,
+          name: "장취산",
+          department: "영업부",
+          position: "사원",
+          price: 23244,
+        },
+        {
+          id: 29,
+          name: "김상순",
+          department: "기획부",
+          position: "사원",
+          price: 20000,
+        },
+        {
+          id: 30,
+          name: "장삼봉",
+          department: "인사부",
+          position: "사원",
+          price: 10000,
+        },
+        {
+          id: 31,
+          name: "백소정",
+          department: "인사부",
+          position: "사원",
+          price: 20000,
+        },
+        {
+          id: 33,
+          name: "조현욱",
+          department: "회계부",
+          position: "사원",
+          price: 1500,
+        },
+        {
+          id: 34,
+          name: "김동근",
+          department: "기획부",
+          position: "사장",
+          price: 100,
+        },
+      ];
+
+      new Vue({
+        el: "#app",
+        data: {
+          members,
+        },
+        created() {
+          localStorage.setItem("members", JSON.stringify(members));
+        },
+      });
+    </script>
+  </body>
+</html>
